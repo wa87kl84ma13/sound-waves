@@ -62,6 +62,11 @@ img {
     font-weight: 700;
 }
 
+.logo-icon {
+    padding-right: 8px;
+    color: var(--primary-purple);
+}
+
 .sound {
     color: var(--primary-purple);
 }

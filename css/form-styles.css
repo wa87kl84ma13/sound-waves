@@ -22,12 +22,17 @@ ul {
 
 .main-header {
     background: #000;
-    padding: 10px 0;
+    padding: 25px 0;
 }
 
 .logo {
     font-size: 1.6rem;
     font-weight: 700;
+}
+
+.logo-icon {
+    padding-right: 8px;
+    color: var(--primary-purple);
 }
 
 .logo a {
@@ -148,12 +153,12 @@ a:hover,
     }
 
     .main-header {
-        padding: 15px 0;
+        padding: 22px 0;
     }
 
     .logo {
         text-align: center;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     .form-section {
