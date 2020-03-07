@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>SoundWaves - High Quality Music</title>
+</head>
+<body>
+
+    <div id="modal">
+        <div id="close">+</div>
+        <div class="modal-content">
+            <h3>Sign up to access great music.</h3>
+            <h4>Listen to all genres of fantastic music.</h4>
+            <form id="register-form">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name">
+                <div class="error name-error"></div>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+                <div class="error email-error"></div>
+
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password">
+                <div class="error password-error"></div>
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" name="confirm-password" id="confirm-password">
+                <div class="error confirm-password-error"></div>
+
+                <button id="register" type="submit">Sign Up</button>
+            </form>
+        </div>
+
+           <div id="success-message" class="remove-success">
+            <div class="logo">
+                <a href="#"><span class="sound">Sound</span>Waves</a>
+            </div>
+            <div class="success-content">
+                <h3>Thank you for signing up!</h3>
+                <p>You can now enjoy tons of fantastic music on any device. We hope you love the sound of that.</p>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="header-wrap">
+                <div class="logo">
+                    <a href="#"><span class="sound">Sound</span>Waves</a>
+                </div>
+
+                <div id="hamburger">
+                    <div class="lines"></div>
+                    <div class="lines"></div>
+                    <div class="lines"></div>
+                </div>
+                <nav id="navigation">
+                    <div id="close-nav">+</div>
+                    <ul>
+                        <li>Plans</li>
+                        <li>Login</li>
+                        <li><a href="#" class="trial trial-action" id="free-trial">Free Trial</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="top-banner">
+        <div class="banner-image">
+            <div class="overlay">
+            </div>
+            <div class="container">
+            <div class="banner-content">
+                <h1>50 million songs.</h1>
+                <h2>Play on any device, anywhere.</h2>
+                <h3>It's as good as it sounds.</h3>
+
+                <button class="sign-up trial-action">Start free trial</button>
+                <p>Cancel at any time.</p>
+            </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="favourites">
+        <div class="container">
+            <div class="fav-wrap">
+                <div class="fav-left">
+                    <h2>All of your favourite artists.</h2>
+                    <p>Do you like rock, hip-hop or even classical? We've got every genre just for you.</p>
+                    <p>Here's a little glimpse at some of the artists you could be listening to right now.</p>
+                    <p class="all-music">
+                        <a href="#">Browse all music >></a>
+                    </p>
+                </div>
+
+                <div class="fav-right">
+                    <div class="images">
+                        <div class="album">
+                            <img src="img/ed-sheeran.png" alt="Ed Sheeran No.6 Collaborations Cover Art">
+                            <div class="album-overlay"></div>
+                            <div class="heading-overlay">
+                                <h4>No.6 Collaborations</h4>
+                            </div>
+                        </div>
+                        <div class="album">
+                            <img src="img/mmlp.png" alt="The Marshall Mathers LP Cover Art">
+                            <div class="album-overlay"></div>
+                            <div class="heading-overlay">
+                                <h4>The Marshall Mathers LP</h4>
+                            </div>
+                        </div>
+                        <div class="album">
+                            <img src="img/green-day.jpg" alt="Green Day Father of all Motherfuckers Cover Art">
+                            <div class="album-overlay"></div>
+                            <div class="heading-overlay">
+                                <h4>Father of all Motherfuckers</h4>
+                            </div>
+                        </div>
+                        <div class="album">
+                            <img src="img/pink-floyd.jpg" alt="Pink Floyd The Dark Side of the Moon Cover Art">
+                            <div class="album-overlay"></div>
+                            <div class="heading-overlay">
+                                <h4>The Dark Side of the Moon</h4>
+                            </div>
+                        </div>
+                        <div class="album">
+                            <img src="img/kendrick.jpg" alt="Kendrick Lamar To Pimp A Butterfly Cover Art">
+                            <div class="album-overlay"></div>
+                            <div class="heading-overlay">
+                                <h4>To Pimp A Butterfly</h4>
+                            </div>
+                        </div>
+                        <div class="album">
+                            <img src="img/abbey-road.jpg" alt="The Beatles Abbey Road Cover Art">
+                            <div class="album-overlay"></div>
+                            <div class="heading-overlay">
+                                <h4>Abbey Road</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="devices">
+        <div class="device-background">
+            <div id="device-overlay"></div>
+            <div class="container">
+                <div class="device-text">
+                    <h2>Download your music.</h2>
+                    <p>Listen to your music offline with unlimited skips.</p>
+                    <button class="sign-up trial-action">Start free trial</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="frequent-questions">
+        <div class="container">
+            <h2>Frequently asked questions.</h2>
+            <div class="question-wrap">
+                <div class="question-block">
+                    <div class="question">
+                        <h4>What is SoundWaves?</h4>
+                        <span class="cross">+</span>
+                    </div>
+                    <div class="answer">
+                        <p class="answer-top">SoundWaves is a music streaming service where you can download millions of songs from your 
+                        artists on any device, anywhere.</p>
+                        <p>You can download your music and listen to it offline with unlimited skips.</p>
+                    </div>
+                </div>
+
+
+                <div class="question-block">
+                    <div class="question">
+                        <h4>Where can I listen to my music?</h4>
+                        <span class="cross">+</span>
+                    </div>
+                    <div class="answer">
+                        <p>You can listen to your music on any device, anytime, anywhere. Listen to all your favourites artists wherever you are.</p>
+                    </div>
+                </div>
+                
+                <div class="question-block">
+                    <div class="question">
+                        <h4>How do I cancel?</h4>
+                        <span class="cross">+</span>
+                    </div>
+                    <div class="answer">
+                        <p class="answer-top">We don't believe in annoying contracts or commitments, you can cancel your subscription at anytime.</p>
+                        <p>Just login to your account and click on cancel subscription.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

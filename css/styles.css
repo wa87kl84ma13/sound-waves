@@ -1,0 +1,836 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-purple: #932EB6;
+    --modal-duration: 0.8s;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*-- HEADER --*/
+.main-header {
+    background: #000;
+    padding: 15px 0;
+}
+
+#hamburger {
+    background: #932EB6;
+    padding: 12px 10px 5px 10px;
+    width: 10%;
+    display: none;
+}
+
+.lines {
+    background: #fff;
+    height: 4px;
+    margin-bottom: 6px;
+}
+
+.logo {
+    width: 25%;
+    text-align: left;
+    padding-top: 12px;
+    font-size: 1.3rem;
+}
+
+.sound {
+    color: var(--primary-purple);
+}
+
+#navigation {
+    width: 75%;
+    text-align: right;
+}
+
+#navigation li {
+    display: inline-block;
+    padding: 10px 18px;
+}
+
+.banner-image {
+    background-image: url('../img/speaker.jpg');
+    height: 85vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center bottom;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.banner-content {
+    z-index: 5;
+    position: absolute;
+    top: 25%;
+    text-align: left;
+}
+
+.main-header,
+.banner-content,
+.logo a,
+.sign-up,
+.fav-left {
+    color: #fff;
+}
+
+.header-wrap,
+.fav-wrap,
+.images,
+.playlist-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-size: 4.5rem;
+}
+
+.banner-content h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+.banner-content h1,
+.banner-content h2,
+.banner-content h3 {
+    padding-bottom: 10px;
+}
+
+.sign-up {
+    margin-top: 20px;
+    border: none;
+    padding: 14px 22px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.sign-up:focus {
+    outline: none;
+}
+
+.sign-up:hover {
+    background: #4C0665;
+}
+
+.banner-content p {
+    padding-top: 28px;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.trial {
+    border: 2px solid #51CF9B;
+    padding: 8px 15px;
+    color: #51CF9B;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.trial:hover {
+    background: #51CF9B;
+    color: #000;
+}
+
+.sign-up,
+.trial,
+li,
+.album,
+#close {
+    cursor: pointer;
+}
+
+.sign-up {
+    background: var(--primary-purple);
+}
+
+/*-- FAVOURITES --*/
+
+.fav-wrap {
+    padding: 10% 0;
+}
+
+.fav-left {
+    text-align: left;
+    width: 40%;
+}
+
+.fav-right {
+    width: 55%;
+    margin-left: 5%;
+}
+
+.album {
+    width: 30.33%;
+    margin-left: 3%;
+    margin-bottom: 20px;
+    position: relative;
+    background: #000;
+}
+
+.heading-overlay {
+    display: none;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.3rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.85);
+    animation-name: modalOpen;
+    animation-duration: var(--modal-duration);
+}
+
+.heading-overlay h4 {
+    padding-top: 80px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.album:hover .heading-overlay {
+    display: block;
+}
+
+.images {
+    margin-left: -3%;
+}
+
+.favourites {
+    background: linear-gradient(90deg, var(--primary-purple), #51CF9B);
+}
+
+.fav-left h2 {
+    padding-top: 20%;
+    padding-bottom: 25px;
+    font-size: 2.2rem;
+}
+
+.fav-left p {
+    font-size: 1.2rem;
+    line-height: 30px;
+}
+
+.all-music a {
+    font-size: 1.1rem;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 18px;
+}
+
+.all-music {
+    padding-top: 50px;
+}
+
+.all-music a:hover {
+    background: #fff;
+    color: #000;
+}
+
+/*-- MODAL --*/
+.modal-content {
+    padding: 30px 25px 25px 25px;
+    max-width: 480px;
+    text-align: left;
+    margin: 60px auto 40px auto;
+    background: #fff;
+    z-index: 10;
+}
+
+label,
+#register {
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    width: 85%;
+}
+
+.modal-content h3 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding-bottom: 15px;
+    color: var(--primary-purple);
+}
+
+.modal-content h4 {
+    font-weight: 400;
+    font-size: 1.1rem;
+    padding-bottom: 30px;
+}
+
+label {
+    padding-bottom: 5px;
+}
+
+#register {
+    background: #51CF9B;
+    color: #fff;
+    border: none;
+    padding: 14px 24px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    width: 40%;
+    border-radius: 4px;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.modal-background {
+    animation-name: modalOpen;
+    animation-duration: var(--modal-duration);
+}
+
+#close,
+#close-pop-up {
+    color: #fff;
+    font-size: 7rem;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 0;
+    right: 15%;
+}
+
+#close-nav {
+    color: #000;
+    font-size: 7rem;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    display: none;
+    font-weight: 300;
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*-- TRACK PLAYLIST --*/
+.playlist {
+    padding: 35px 0;
+}
+
+.album-info {
+    width: 23%;
+}
+
+.album-info table {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.tracklist {
+    width: 72%;
+    margin-left: 5%;
+    text-align: left;
+}
+
+.tracklist h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: left;
+}
+
+.tracklist h4 {
+    padding: 10px 0;
+}
+
+.album-cover {
+    max-height: 275px;
+}
+
+.table-title {
+    font-weight: 600;
+    padding-right: 20px;
+}
+
+td {
+    background: #eee;
+    padding: 8px 8px 8px 5px;
+}
+
+.action-btn {
+    background: var(--primary-purple);
+    font-size: 1.125rem;
+    color: #fff;
+    padding: 5px;
+}
+
+.action-btn-large {
+    font-size: 3.5rem;
+    padding: 0 15px;
+    color: var(--primary-purple);
+}
+
+#playing-now {
+    color: #51CF9B;
+    display: none;
+}
+
+.music-controls {
+    margin-top: 20px;
+}
+
+#prev,
+#play,
+#next {
+    border: none;
+    background: none;
+}
+
+.songs {
+    padding-top: 35px;
+}
+
+.all-songs li {
+    padding: 10px;
+    border-bottom: 1px dotted #ccc;
+    font-size: 1.1rem;
+}
+
+.progress-container {
+    border: 1px solid #ccc;
+    width: 60%;
+    margin-top: 30px;
+    height: 10px;
+    border-radius: 4px;
+}
+
+.progress {
+    background: var(--primary-purple);
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.error {
+    color: red;
+    padding: 4px 0 25px 0;
+    font-size: 0.9rem;
+}
+
+#success-message {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+}
+
+.remove-sucess {
+    display: none;
+}
+
+.success-content {
+    background: #eee;
+    padding: 20px;
+    font-size: 1.5rem;
+    margin: 75px auto;
+    width: 55%;
+}
+
+.success-content h3 {
+    padding-bottom: 40px;
+    color: var(--primary-purple);
+    font-weight: 400;
+}
+
+/*--POP UP MODAL--*/
+#modal-pop-up {
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    display: none;
+}
+
+.pop-up-content {
+    background: #fff;
+    padding: 30px 20px;
+    position: relative;
+    max-width: 450px;
+    margin: 100px auto 0 auto;
+}
+
+#pop-up-name,
+#pop-up-email {
+    display: block;
+    width: 85%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#pop-up-form {
+    text-align: left;
+}
+
+#pop-up-form label {
+    padding-bottom: 5px;
+}
+
+.pop-up-content h3 {
+    padding-bottom: 30px;
+    color: var(--primary-purple);
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+#pop-up-form button {
+    background: var(--primary-purple);
+    color: #fff;
+    padding: 15px 28px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.pop-up-fade {
+    animation-name: popUpOpen;
+    animation-duration: 1s;
+}
+
+@keyframes popUpOpen {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }   
+}
+
+/*-- DEVICES --*/
+.devices {
+    height: 650px;
+    position: relative;
+}
+
+.device-background {
+    background: url('../img/phone.jpg');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center center;
+}
+
+#device-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+}
+
+.device-text {
+    color: #fff;
+    position: relative;
+    z-index: 10;
+    text-align: left;
+    padding-top: 15%;
+}
+
+.device-text h2 {
+    font-size: 3.8rem;
+    padding-bottom: 15px;
+}
+
+.device-text p {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+}
+
+.frequent-questions {
+    background: linear-gradient(105deg, #8f1d1d, #4C0665);
+    color: #fff;
+    padding-bottom: 75px;
+}
+
+.frequent-questions h2 {
+    font-size: 3rem;
+    padding: 45px 0 0 0;
+}
+
+.question-wrap {
+    max-width: 960px;
+    margin: 50px auto 0 auto;
+}
+
+.question {
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.question h4 {
+    font-size: 1.8rem;
+    display: inline-block;
+    font-weight: 400;
+}
+
+.answer {
+    font-size: 1.5rem;
+    margin: 4px 0;
+    display: none;
+}
+
+.answer-top {
+    padding-bottom: 22px;
+}
+
+.question,
+.answer {
+    background: #000;
+    padding: 20px;
+    text-align: left;
+}
+
+.cross {
+    font-size: 5rem;
+    position: absolute;
+    right: 20px;
+    top: -10px;
+    font-weight: 300;
+}
+
+.show {
+    display: block;
+}
+
+.cross-close {
+    transform: rotate(45deg);
+    transition: 0.2s ease-in;
+}
+
+.question:hover {
+    cursor: pointer;
+}
+
+.show-nav {
+    animation-name: popUpOpen;
+    animation-duration: var(--modal-duration);
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        position: relative;
+        height: 20px;
+    }
+
+    .logo {
+        position: absolute;
+        top: 0;
+        left: 15px;
+        font-size: 1.3rem;
+    }
+
+    #navigation {
+        display: none;
+        position: fixed;
+        top: 0;
+        background: #fff;
+        z-index: 1000;
+        width: 100%;
+        height: 100%;
+    }
+
+    #close-nav {
+        display: block;
+    }
+
+    ul {
+        padding-top: 70px;
+    }
+
+    #navigation li {
+        display: block;
+        padding: 10px 18px;
+        color: #000;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .trial {
+        border: none;
+        padding: 0;
+    }
+
+    #hamburger {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        height: 100%;
+    }
+
+    .banner-image {
+        max-height: 350px;
+    }
+
+    .banner-content {
+        top: 15%;
+    }
+
+    .banner-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .banner-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .banner-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .sign-up {
+        margin-top: 10px;
+        font-size: 1.1rem;
+    }
+
+    .banner-content,
+    .device-text {
+        padding-left: 15px;
+    }
+
+    .banner-content p {
+        padding-top: 18px;
+        font-size: 1.1rem;
+    }
+
+    .devices {
+        height: 320px;
+    }
+
+    .device-text {
+        padding-top: 20%;
+    }
+
+    .device-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .device-text p {
+        font-size: 1.2rem;
+    }
+
+    .fav-wrap {
+        display: block;
+        padding: 0 15px;
+    }
+
+    .fav-left {
+        width: 100%;
+    }
+
+    .fav-left h2 {
+        padding: 40px 0 30px 0;
+        font-size: 1.6rem;
+    }
+
+    .fav-left p {
+        font-size: 1rem;
+    }
+
+    .all-music {
+        padding-top: 20px;
+    }
+
+    .fav-right {
+        padding: 55px 0;
+    }
+
+    .all-music a {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+    }
+
+    .fav-right {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .heading-overlay h4 {
+        width: 100%;
+        font-size: 0.8rem;
+        padding-top: 35px;
+    }
+
+    .frequent-questions h2 {
+        font-size: 2rem;
+    }
+
+    .question-wrap {
+        padding: 0 15px;
+    }
+
+    .question h4,
+    .answer p {
+        font-size: 1.1rem;
+    }
+
+    .cross {
+        font-size: 4rem;
+        top: -7px;
+    }
+}
