@@ -1,10 +1,11 @@
-// Frequent questions accordion
-const question = document.querySelectorAll('.question-block');
+const plans = document.querySelectorAll('.plan-card');
 
-question.forEach(function(show) {
-    show.addEventListener('click', function() {
-        this.getElementsByClassName('answer')[0].classList.toggle('show');
-        this.getElementsByClassName('cross')[0].classList.toggle('cross-close');
+plans.forEach(function(plan) {
+    plan.addEventListener('mouseover', function() {
+        this.getElementsByClassName('card-content')[0].classList.add('card-expand');
+    });
+    plan.addEventListener('mouseout', function() {
+        this.getElementsByClassName('card-content')[0].classList.remove('card-expand');
     });
 });
 
