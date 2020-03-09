@@ -11,7 +11,6 @@
 body {
     font-family: 'Raleway', sans-serif;
     text-align: center;
-    background: #eee;
 }
 
 a {
@@ -83,39 +82,27 @@ img {
 }
 
 .main-header,
-.banner-content,
 .logo a,
-.sign-up,
-.fav-left {
+.sign-up {
     color: #fff;
 }
 
 .header-wrap,
-.plan-cards-wrap,
-.footer-wrap {
+.footer-wrap,
+.albums-wrap {
     display: flex;
     flex-wrap: wrap;
 }
 
 h1 {
-    font-size: 4.5rem;
+    font-size: 2.4rem;
+    font-weight: 400;
 }
 
-.banner-content h2 {
-    font-size: 2.2rem;
-}
-
-h3 {
-    font-size: 2rem;
-}
-
-.banner-content h1,
-.banner-content h2 {
-    padding-bottom: 10px;
-}
-
-.banner-content h3 {
-    padding-bottom: 40px;
+h2 {
+    padding: 10px 0 40px 0;
+    color: var(--primary-purple);
+    font-weight: 500;
 }
 
 .sign-up {
@@ -124,14 +111,6 @@ h3 {
     font-size: 1.3rem;
     font-weight: 500;
     border-radius: 4px;
-}
-
-.sign-up:focus {
-    outline: none;
-}
-
-.sign-up:hover {
-    background: #4C0665;
 }
 
 .trial {
@@ -145,6 +124,14 @@ h3 {
 .trial:hover {
     background: #51CF9B;
     color: #000;
+}
+
+li {
+    cursor: pointer;
+}
+
+.sign-up {
+    background: var(--primary-purple);
 }
 
 #close-nav {
@@ -191,114 +178,6 @@ h3 {
     display: block;
 }
 
-/*-- PLANS --*/
-h1 {
-    padding: 30px 0 10px 0;
-    font-size: 2.4rem;
-}
-
-h2 {
-    font-weight: 300;
-    font-size: 1.2rem;
-}
-
-h1,
-h3 {
-    font-weight: 500;
-}
-
-.plan-cards-wrap {
-    margin-left: -2%;
-    padding-top: 75px;
-    padding-bottom: 95px;
-}
-
-.plan-card {
-    width: 31.33%;
-    margin-left: 2%;
-    position: relative;
-    background: #fff;
-}
-
-.card-content {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px 0 40px 0;
-}
-
-.card-content h2 {
-    padding: 10px 0;
-}
-
-.card-content h3 {
-    padding-bottom: 15px;
-}
-
-.card-content h4 {
-    padding-bottom: 10px;
-}
-
-.plan-btn {
-    background: var(--primary-purple);
-    color: #fff;
-    padding: 15px 55px;
-    width: 40%;
-    border-radius: 4px;
-}
-
-.features {
-    margin: 0 auto;
-    width: 60%;
-    text-align: left;
-    padding-top: 35px;
-}
-
-.features h4 {
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-
-.card-content ul {
-    padding-bottom: 50px;
-    list-style-type: none;
-}
-
-.card-content li::before {
-    content: '\2713\0020';
-    color: #51CF9B;
-    font-size: 1.4rem;
-}
-
-.card-content li {
-    padding: 10px 0;
-    font-size: 1.1rem;
-}
-
-.popular-tag {
-    position: absolute;
-    top: 10px;
-    left: 0;
-    background: #51CF9B;
-    padding: 5px 18px;
-    color: #fff;
-    font-weight: 600;
-}
-
-.card-content:hover {
-    box-shadow: 1px 2px 2px 3px #eee;
-    transition: 0.2s ease-in;
-    cursor: pointer;
-}
-
-.plan-btn:hover {
-    background: #4C0665;
-}
-
-.price {
-    color: var(--primary-purple);
-    font-weight: 700;
-}
-
 .main-footer {
     background: #000;
     color: #fff;
@@ -343,6 +222,54 @@ h3 {
     text-align: right;
     color: #51CF9B;
     font-size: 0.85rem;
+}
+
+.section-all-albums {
+    padding: 45px 0;
+}
+
+.albums-wrap {
+    margin-left: -2%;
+}
+
+.album-block {
+    width: 18%;
+    margin-left: 2%;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.album-block > img {
+    max-height: 220px;
+}
+
+.album-content {
+    padding: 10px;
+}
+
+.album-content h4 {
+    font-weight: 600;
+    color: var(--primary-purple);
+    padding: 5px 0 8px 0;
+}
+
+.artist {
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.reviews {
+    padding-top: 10px;
+}
+
+.stars {
+    color: #eee;
+    font-size: 0.9rem;
+}
+
+.stars:hover {
+    color: #51CF9B;
+    cursor: pointer;
 }
 
 @media (max-width: 480px) {
@@ -412,48 +339,6 @@ h3 {
         top: -7px;
     }
 
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.1rem;
-        padding: 15px 15px 30px 15px;
-    }
-
-    .plan-cards-wrap {
-        display: block;
-        margin-left: 0;
-        padding: 0 15px;
-    }
-
-    .features {
-        width: 80%;
-    }
-
-    .plan-card {
-        width: 100%;
-        margin-left: 0;
-        margin-bottom: 20px;
-    }
-
-    .plan-card:hover {
-        transform: scale(1);
-    }
-
-    .card-content {
-        padding: 10px 10px 40px 10px;
-    }
-
-    .card-content ul {
-        padding-top: 0;
-    }
-
-    .card-content h3 {
-        padding: 0;
-        font-size: 1.5rem;
-    }
-
     .main-footer {
         padding-top: 0;
     }
@@ -491,5 +376,18 @@ h3 {
 
     .footer-block p:last-child {
         padding-bottom: 25px;
+    }
+
+    .album-block {
+        width: 48%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        padding: 20px 0 30px 0;
+        font-size: 1.2rem;
     }
 }
