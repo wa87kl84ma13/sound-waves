@@ -89,7 +89,8 @@ img {
 
 .header-wrap,
 .footer-wrap,
-.albums-wrap {
+.albums-wrap,
+.tracklist-wrap {
     display: flex;
     flex-wrap: wrap;
 }
@@ -126,7 +127,11 @@ h2 {
     color: #000;
 }
 
-li {
+li,
+.album-content,
+.stars:hover,
+#close-nav,
+#close-tracks {
     cursor: pointer;
 }
 
@@ -269,7 +274,118 @@ li {
 
 .stars:hover {
     color: #51CF9B;
-    cursor: pointer;
+}
+
+#track-modal {
+    background: rgba(0,0,0, 0.95);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+}
+
+.track-content {
+    background: #eee;
+    position: absolute;
+    top: 90px;
+    padding: 25px;
+    z-index: 1000;
+    width: 800px;
+    left: 20%;
+}
+
+#close-tracks {
+    color: #fff;
+    font-size: 11rem;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -30px;
+    right: 70px;
+    font-weight: 300;
+}
+
+.tracklist {
+    display: none;
+    position: absolute;
+}
+
+.tracklist ol {
+    padding-left: 0;
+    list-style-type: none;
+    padding-top: 30px;
+}
+
+.tracklist ol li::before {
+    background: var(--primary-purple);
+    padding: 5px 10px;
+    width: 30px;
+    height: 30px;
+    content: counter(item);
+    margin-right: 10px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.tracklist li {
+    border-bottom: 1px dotted #000;
+    font-size: 1.1rem;
+    counter-increment: item;
+    padding: 10px 0;
+}
+
+.tracklist li:last-child {
+    border-bottom: none;
+}
+
+.show-tracklist {
+    display: block;
+}
+
+.album-title {
+    color: var(--primary-purple);
+    padding-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-top: 8px;
+}
+
+.album-artist {
+    padding-bottom: 10px;
+    padding-top: 0;
+    font-size: 2.2rem;
+}
+
+.release-year,
+.album-artist,
+.genre,
+.record-label,
+.tracklist li {
+    color: #000;
+}
+
+.tracklist-wrap {
+    padding-bottom: 20px;
+}
+
+.tracklist-image {
+    width: 30%;
+}
+
+.tracklist-image img {
+    border: 3px solid #000;
+}
+
+.tracklist-info {
+    margin-left: 5%;
+    width: 65%;
+    text-align: left;
+}
+
+.genre-release-container {
+    padding: 10px 0;
 }
 
 @media (max-width: 480px) {
@@ -389,5 +505,44 @@ li {
     h2 {
         padding: 20px 0 30px 0;
         font-size: 1.2rem;
+    }
+
+    .tracklist-wrap {
+        display: block;
+    }
+
+    .track-content {
+        top: 15%;
+        width: 100%;
+        left: 0;
+        padding: 20px 10px;
+    }
+
+    .tracklist-image {
+        text-align: center;
+        padding: 0 60px 20px 0;
+        width: 50%;
+    }
+
+    .tracklist-info {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .tracklist ol {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .tracklist li {
+        font-size: 0.8rem;
+        line-height: 28px;
+        width: 95%;
+    }
+
+    #close-tracks {
+        top: -45px;
+        right: 30px;
+        font-size: 9rem;
     }
 }

@@ -9,7 +9,30 @@ const albums = [
         title: 'The Marshall Mathers LP',
         artist: 'Eminem',
         img: 'img/albums/mmlp.png',
-        release: 2000
+        release: 2000,
+        genre: 'Hip Hop/Rap',
+        label: 'Aftermath Entertainment/Interscope Records',
+        tracklist: [
+            "<li>Public Service Announcement 2000</li>",
+            "<li>Kill You</li>",
+            "<li>Stan (feat. Dido)</li>",
+            "<li>Paul (skit)</li>",
+            "<li>Who Knew</li>",
+            "<li>Steve Berman (skit)</li>",
+            "<li>The Way I Am</li>",
+            "<li>The Real Slim Shady</li>",
+            "<li>Remember Me? (feat. RBX and Sticky Fingaz)</li>",
+            "<li>I'm Back</li>",
+            "<li>Marshall Mathers</li>",
+            "<li>Ken Kaniff</li>",
+            "<li>Drug Ballad</li>",
+            "<li>Amityville</li>",
+            "<li>Bitch Please II (feat. Dr. Dre, Snoop Dogg, Xzibit and Nate Dogg)</li>",
+            "<li>Kim</li>",
+            "<li>Under the Influence (feat. D12)</li>",
+            "<li>Criminal</li>"
+        ].join('')
+        
     },
     {
         title: 'To Pimp a Butterfly',
@@ -34,6 +57,12 @@ const albums = [
         artist: 'Dr Dre',
         img: 'img/albums/2001.jpg',
         release: 1999
+    },
+    {
+        title: 'The Blueprint',
+        artist: 'Jay Z',
+        img: 'img/albums/blueprint.jpg',
+        release: 2001
     }
 ];
 
@@ -52,8 +81,50 @@ albums.forEach(function(album) {
                                     <i class="fas fa-star stars"></i>
                                     <i class="fas fa-star stars"></i>
                                 </div>
+                                <div class="tracklist">
+                                    <div class="tracklist-wrap">
+                                        <div class="tracklist-image">
+                                            <img src="${album.img}" alt="${album.title}">
+                                        </div>
+                                        <div class="tracklist-info">
+                                            <h2 class="album-artist">${album.artist}</h2>
+                                            <h3 class="album-title">${album.title}</h3>
+                                            <div class="genre-release-container">
+                                                <span class="genre">${album.genre} -</span>
+                                                <span class="release-year">${album.release}</span>
+                                            </div>
+                                            <p class="record-label">${album.label}</p>
+                                        </div>
+                                    </div>
+                                    <ol>
+                                        ${album.tracklist}
+                                    </ol>
+                                </div>
                             </div>
                         </div>`;
+});
+
+// Show tracklist on click
+const albumBlocks = document.querySelectorAll('.album-block');
+const trackModal = document.getElementById('track-modal');
+
+albumBlocks.forEach(function(block) {
+    block.addEventListener('click', function() {
+        this.getElementsByClassName('tracklist')[0].classList.add('show-tracklist');
+        this.getElementsByClassName('tracklist')[0].classList.add('track-content');
+        trackModal.style.display = 'block';
+    });
+});
+
+// Close tracklist
+const closeTracklist = document.getElementById('close-tracks');
+const tracks = document.querySelectorAll('.tracklist');
+
+closeTracklist.addEventListener('click', function() {
+    tracks.forEach(function(track) {
+        track.classList.remove('show-tracklist');
+    });
+    trackModal.style.display = 'none';
 });
 
 const stars = document.querySelectorAll('.stars');
