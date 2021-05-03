@@ -268,11 +268,12 @@ li,
 }
 
 .stars {
-    color: #eee;
+    color: #ccc;
     font-size: 0.9rem;
 }
 
-.stars:hover {
+.stars:hover,
+.selected-star {
     color: #51CF9B;
 }
 
@@ -290,7 +291,7 @@ li,
 .track-content {
     background: #eee;
     position: absolute;
-    top: 90px;
+    top: 120px;
     padding: 25px;
     z-index: 1000;
     width: 800px;
@@ -302,7 +303,7 @@ li,
     font-size: 11rem;
     transform: rotate(45deg);
     position: absolute;
-    top: -30px;
+    top: -40px;
     right: 70px;
     font-weight: 300;
 }
@@ -310,6 +311,8 @@ li,
 .tracklist {
     display: none;
     position: absolute;
+    height: calc(100% - 200px);
+    overflow: auto;
 }
 
 .tracklist ol {
@@ -387,7 +390,22 @@ li,
 .genre-release-container {
     padding: 10px 0;
 }
-
+.search-container {
+    background: var(--primary-purple);
+    padding: 30px 0;
+}
+#search-form input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    width: 45%;
+    outline: none;
+    border-radius: 5px;
+    height: 24px;
+    font-size: 14px;
+}
+#search-form input[type="text"]:focus {
+    border: 2px solid var(--primary-purple);
+}
 @media (max-width: 480px) {
     .main-header {
         position: relative;
