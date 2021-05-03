@@ -44,7 +44,31 @@ const albums = [
         title: 'The Slim Shady LP',
         artist: 'Eminem',
         img: 'img/albums/sslp.jpg',
-        release: 1999
+        release: 1999,
+        genre: 'Hip Hop/Rap',
+        label: 'Aftermath Entertainment/Interscope Records',
+        tracklist: [
+            "<li>Public Service Announcement</li>",
+            "<li>My Name Is</li>",
+            "<li>Guilty Conscience (feat. Dr Dre)</li>",
+            "<li>Brain Damage</li>",
+            "<li>Paul (skit)</li>",
+            "<li>If I Had</li>",
+            "<li>97 Bonnie & Clyde</li>",
+            "<li>Bitch (skit)</li>",
+            "<li>Role Model</li>",
+            "<li>Lounge (skit)</li>",
+            "<li>My Fault</li>",
+            "<li>Ken Kaniff (skit)</li>",
+            "<li>Cum on Everybody</li>",
+            "<li>Rock Bottom</li>",
+            "<li>Just Don't Give a Fuck</li>",
+            "<li>Soap (skit)</li>",
+            "<li>As the World Turns</li>",
+            "<li>I'm Shady</li>",
+            "<li>Bad Meets Evil</li>",
+            "<li>Still Don't Give A Fuck</li>"
+        ].join('')
     },
     {
         title: 'Greatest Hits',
@@ -105,7 +129,7 @@ albums.forEach(function(album) {
 });
 
 // Show tracklist on click
-const albumBlocks = document.querySelectorAll('.album-block');
+const albumBlocks = document.querySelectorAll('.album-content');
 const trackModal = document.getElementById('track-modal');
 
 albumBlocks.forEach(function(block) {
@@ -137,3 +161,22 @@ function starsClick() {
 
 starsClick();
 //stars.forEach(star => star.addEventListener('click', starsClick));
+
+// Filter album - search bar
+const filterAlbum = document.getElementById('search-album');
+
+filterAlbum.addEventListener('keyup', filterAlbums);
+
+function filterAlbums(e) {
+    const filterText = e.target.value.toLowerCase();
+    const albumList = music.querySelectorAll('.album-block');
+    Array.from(albumList).forEach(function(album) {
+        const albumName = album.textContent;
+        if(albumName.toLowerCase().indexOf(filterText) != -1) {
+            album.style.display = 'block';
+            console.log(albumName)
+        } else {
+            album.style.display = 'none';
+        }
+    });
+}
