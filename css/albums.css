@@ -467,7 +467,9 @@ li,
         margin-top: 10px;
         font-size: 1.1rem;
     }
-
+    #search-form input[type="text"] {
+        width: 75%;
+    }
     .cross {
         font-size: 4rem;
         top: -7px;
